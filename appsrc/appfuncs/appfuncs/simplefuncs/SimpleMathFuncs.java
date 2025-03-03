@@ -1,8 +1,10 @@
 package appfuncs.simplefuncs;
 
-import appsupport.supportfuncs.SupportFuncs;
-
 public class SimpleMathFuncs {
+
+    public static boolean isFactor(int a, int b) {
+        return b % a == 0;
+    }
 
     public static int lcf(int a, int b) {
         a = Math.abs(a);
@@ -11,7 +13,7 @@ public class SimpleMathFuncs {
         int min = Math.min(a, b);
 
         for (int i =2; i <= min / 2; i++) {
-            if (SupportFuncs.isFactor(i, a) && SupportFuncs.isFactor(i, b)) {
+            if (isFactor(i, a) && isFactor(i, b)) {
                 return i;
             }
         }
@@ -25,7 +27,7 @@ public class SimpleMathFuncs {
         int min = Math.min(a, b);
 
         for (int i = min / 2; i > 1; i--) {
-            if (SupportFuncs.isFactor(i, a) && SupportFuncs.isFactor(i, b)) {
+            if (isFactor(i, a) && isFactor(i, b)) {
                 return i;
             }
         }
